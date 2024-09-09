@@ -1,0 +1,1163 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap");
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 25px;
+  font-size: 18px;
+  color: #222;
+  font-weight: 400;
+  overflow-x: hidden;
+  font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
+}
+body > div {
+  padding: 100px 0;
+}
+body > div > div {
+  width: calc(100% - 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body > div > div header h3 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4.375em;
+  line-height: 100px;
+}
+body > div > div header h3:before {
+  content: "";
+  position: absolute;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  bottom: 100%;
+  left: 0;
+}
+body > div > div section {
+  margin-top: 50px;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+  color: #fff;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p {
+  margin: 0;
+}
+
+body.select {
+  overflow-y: hidden;
+}
+
+body > header {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  transition: 0.8s;
+}
+body > header > div {
+  width: calc(100% - 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body > header .lnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  padding: 25px 0;
+}
+body > header .lnb .logo a {
+  display: grid;
+  align-items: center;
+}
+body > header .lnb .logo a em {
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+body > header .lnb .logo a img {
+  width: 200px;
+}
+body > header .lnb nav {
+  text-transform: uppercase;
+}
+body > header .lnb nav .titleMenu > li {
+  display: inline-block;
+  line-height: 50px;
+  margin-left: 30px;
+  padding: 0 10px;
+}
+body > header .lnb nav .titleMenu > li .subMenuWrap {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #000;
+  top: 100px;
+  left: 0;
+  padding: 50px 0;
+  text-align: center;
+}
+body > header .lnb nav .titleMenu > li .subMenuWrap > li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  color: #fff;
+  margin: 0 30px;
+  text-align: left;
+  font-weight: 700;
+}
+body > header .lnb nav .titleMenu > li .subMenuWrap > li .subMenu li {
+  color: #ccc;
+  line-height: 25px;
+}
+body > header .lnb nav .titleMenu > li .subMenuWrap > li .subMenu li a {
+  color: #777;
+  font-size: 16px;
+}
+body > header .lnb nav .titleMenu > li .subMenuWrap > li .subMenu li a:hover {
+  color: #999;
+}
+body > header .lnb nav .menubtn {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+body > header .lnb nav .menubtn span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+body > header .lnb nav .menubtn span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+body > header .lnb nav .menubtn span:nth-child(2) {
+  width: 75%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+body > header .lnb nav .menubtn span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+body > header .lnb nav .menubtn.select span:nth-child(1) {
+  transform: rotate(675deg);
+  top: 50%;
+}
+body > header .lnb nav .menubtn.select span:nth-child(2) {
+  transform: rotate(720deg) translateY(-50%);
+  opacity: 0;
+}
+body > header .lnb nav .menubtn.select span:nth-child(3) {
+  transform: rotate(-675deg);
+  top: 50%;
+}
+body > header .lnb nav.responsive {
+  position: absolute;
+  height: 40vh;
+  width: calc(100% + 20px);
+  top: -40vh;
+  left: -10px;
+  background-color: #000;
+  transition: 0.5s;
+}
+body > header .lnb nav.responsive .titleMenu {
+  position: absolute;
+  width: 70%;
+  height: 80%;
+  top: calc(50% + 10px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  margin: 0;
+}
+body > header .lnb nav.responsive .titleMenu > li {
+  font-weight: 900;
+  display: block;
+  margin: 20px 0;
+  position: relative;
+  border-bottom: 1px solid #333;
+}
+body > header .lnb nav.responsive .titleMenu > li .subMenuWrap {
+  position: static;
+  padding: 0;
+  margin: 0;
+}
+body > header .lnb nav.responsive .titleMenu > li .subMenuWrap > li {
+  display: block;
+  margin: 0 15px;
+  border-top: 1px solid #333;
+}
+body > header .lnb nav.responsive .menubtn {
+  display: block;
+}
+body > header .lnb nav.select {
+  top: 0;
+}
+body > header.bg000 {
+  background-color: #000;
+}
+
+body .mnWrap {
+  background: #f0f0f0;
+  background: linear-gradient(130deg, #fff 35%, #1b1717 35%);
+}
+body .mnWrap main {
+  width: calc(100% - 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  height: auto;
+  display: flex;
+  gap: 30px;
+  padding-top: 100px;
+  align-items: center;
+}
+body .mnWrap main > img {
+  width: 600px;
+}
+body .mnWrap main .text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .mnWrap main .text h1 {
+  text-transform: uppercase;
+  font-family: "SF_HambakSnow";
+  color: #da4;
+  position: relative;
+  line-height: 50px;
+}
+body .mnWrap main .text h1:after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 5px;
+  background-color: #810000;
+  left: 0;
+  top: calc(100% + 27px);
+}
+body .mnWrap main .text h5 {
+  margin-top: 50px;
+  line-height: 50px;
+  font-weight: 900;
+  font-size: 18px;
+}
+body .mnWrap main .text p {
+  font-weight: 300;
+}
+body .mnWrap main .text p:nth-of-type(2) {
+  margin-top: 25px;
+}
+body .mnWrap main .text a {
+  color: #fff;
+  margin-top: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  text-transform: capitalize;
+}
+body .barstoryWrap {
+  margin: 0 auto;
+  background: linear-gradient(90deg, #000 50%, #810000 50%);
+  padding: 0;
+}
+body .barstoryWrap div {
+  display: flex;
+  width: 100%;
+  padding: 50px 0;
+}
+body .barstoryWrap div > div {
+  color: #fff;
+  padding: 0 85px;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+body .barstoryWrap div > div h4 {
+  text-transform: uppercase;
+}
+body .barstoryWrap div > div i {
+  font-size: 32px;
+  transform: translateY(8px);
+  transition: 0.5s;
+}
+body .barstoryWrap div > div:hover {
+  cursor: pointer;
+}
+body .barstoryWrap div > div:hover i {
+  transform: translate(10px, 8px);
+}
+body .pascucciSNSWrap .pascucciSNS section .imgGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 0 auto;
+}
+body .pascucciSNSWrap .pascucciSNS section .imgGroup img {
+  display: block;
+  font-size: 0;
+  width: 100%;
+}
+body .banWrap {
+  position: relative;
+}
+body .banWrap .banner {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+body .banWrap .banner .text {
+  color: #fff;
+  line-height: 50px;
+  font-size: 24px;
+}
+body .banWrap .banner .text h5 {
+  font-weight: 900;
+}
+body .banWrap .banner .text p {
+  font-weight: 300;
+}
+body .banWrap .banner .text .aGroup {
+  margin-top: 25px;
+}
+body .banWrap .banner .text .aGroup a {
+  font-size: 16px;
+  color: #ccc;
+  margin-right: 30px;
+  border-radius: 50px;
+  border: 1px solid white;
+  padding: 5px 20px;
+  transition: 0.5s;
+}
+body .banWrap .banner .text .aGroup a:hover {
+  background-color: #fff;
+  color: #000;
+}
+body .banWrap .banner img {
+  height: 200px;
+}
+body .banWrap:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/bg_happypoint.png") no-repeat bottom center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+body .banWrap:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1b1717;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+body .choiceWrap .choice section {
+  overflow: hidden;
+  padding-bottom: 50px;
+  position: relative;
+}
+body .choiceWrap .choice section .choiceGroup {
+  width: 400%;
+  display: inline-flex;
+  justify-content: space-between;
+  transition: 1.3s;
+}
+body .choiceWrap .choice section .choiceGroup article {
+  background-color: #810000;
+  padding: 30px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  width: calc(25% - 700px);
+  opacity: 0;
+  transition: 2.5s;
+}
+body .choiceWrap .choice section .choiceGroup article .text {
+  height: 100%;
+  padding: 50px 40px;
+  padding-right: 80px;
+  background-color: #fff;
+  line-height: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+body .choiceWrap .choice section .choiceGroup article .text:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/symbol.png") no-repeat center center;
+  background-size: 50%;
+  filter: grayscale(1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
+body .choiceWrap .choice section .choiceGroup article .text h4 {
+  font-size: 26px;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+}
+body .choiceWrap .choice section .choiceGroup article .text h5 {
+  font-weight: 900;
+  line-height: 25px;
+}
+body .choiceWrap .choice section .choiceGroup article .text p {
+  line-height: 25px;
+}
+body .choiceWrap .choice section .choiceGroup article .text p:nth-of-type(2) {
+  font-size: 14px;
+  font-weight: 300;
+}
+body .choiceWrap .choice section .choiceGroup article .text h6 {
+  font-weight: 700;
+  font-size: 16px;
+}
+body .choiceWrap .choice section .choiceGroup article img {
+  width: 140px;
+  position: absolute;
+  right: -50px;
+  bottom: -20px;
+}
+body .choiceWrap .choice section input[type=radio] {
+  display: none;
+}
+body .choiceWrap .choice section .btnGroup {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+body .choiceWrap .choice section .btnGroup label {
+  width: 20px;
+  height: 7px;
+  background-color: #999;
+  transition: 0.5s;
+  cursor: pointer;
+}
+body .choiceWrap .choice section input[id=choicebtn01]:checked ~ .btnGroup label[for=choicebtn01],
+body .choiceWrap .choice section input[id=choicebtn02]:checked ~ .btnGroup label[for=choicebtn02],
+body .choiceWrap .choice section input[id=choicebtn03]:checked ~ .btnGroup label[for=choicebtn03],
+body .choiceWrap .choice section input[id=choicebtn04]:checked ~ .btnGroup label[for=choicebtn04] {
+  width: 40px;
+  background-color: #1b1717;
+}
+body .choiceWrap .choice section input[id=choicebtn01]:checked ~ .choiceGroup {
+  transform: translateX(0);
+}
+body .choiceWrap .choice section input[id=choicebtn02]:checked ~ .choiceGroup {
+  transform: translateX(-25%);
+}
+body .choiceWrap .choice section input[id=choicebtn03]:checked ~ .choiceGroup {
+  transform: translateX(-50%);
+}
+body .choiceWrap .choice section input[id=choicebtn04]:checked ~ .choiceGroup {
+  transform: translateX(-75%);
+}
+body .choiceWrap .choice section input[id=choicebtn01]:checked ~ .choiceGroup article:nth-child(1),
+body .choiceWrap .choice section input[id=choicebtn02]:checked ~ .choiceGroup article:nth-child(2),
+body .choiceWrap .choice section input[id=choicebtn03]:checked ~ .choiceGroup article:nth-child(3),
+body .choiceWrap .choice section input[id=choicebtn04]:checked ~ .choiceGroup article:nth-child(4) {
+  opacity: 1;
+}
+body .notiFaq {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 100px;
+}
+body .notiFaq .noticeWrap {
+  width: 50%;
+}
+body .notiFaq .noticeWrap .notice section article {
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+body .notiFaq .noticeWrap .notice section article h5 {
+  float: left;
+  font-size: 18px;
+  cursor: pointer;
+}
+body .notiFaq .noticeWrap .notice section article h5:hover {
+  text-decoration: underline;
+}
+body .notiFaq .noticeWrap .notice section article h5 a {
+  color: #222;
+}
+body .notiFaq .noticeWrap .notice section article time {
+  float: right;
+}
+body .notiFaq .noticeWrap .notice section > a {
+  color: #222;
+  float: right;
+}
+body .notiFaq .noticeWrap .notice section > a:hover {
+  text-decoration: underline;
+}
+body .notiFaq .faqWrap {
+  width: 50%;
+}
+body .notiFaq .faqWrap .faq section article {
+  margin-top: 25px;
+}
+body .notiFaq .faqWrap .faq section article:nth-of-type(1) {
+  margin-top: 0;
+}
+body .notiFaq .faqWrap .faq section article h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+body .notiFaq .faqWrap .faq section article p a {
+  color: #222;
+}
+body .notiFaq .faqWrap .faq section article p a:hover {
+  text-decoration: underline;
+}
+body .txtAnimation {
+  padding: 0;
+  height: 150px;
+  overflow: hidden;
+}
+body .txtAnimation .imgGroup {
+  position: relative;
+}
+body .txtAnimation .imgGroup .image {
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  color: #fff;
+  left: 0;
+  animation: txtAnimation 20s infinite linear;
+}
+body .txtAnimation .imgGroup .image:nth-child(2) {
+  transform: translateX(150%);
+  animation-delay: 10s;
+}
+body .txtAnimation .imgGroup .image img {
+  display: block;
+  width: 100%;
+}
+body .ftrWrap {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+body .ftrWrap footer {
+  width: calc(100% - 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+body .ftrWrap footer > img {
+  height: 150px;
+  filter: grayscale(1);
+}
+body .ftrWrap footer .info {
+  width: 100%;
+  font-size: 14px;
+}
+body .ftrWrap footer .info p {
+  line-height: 50px;
+}
+body .ftrWrap footer .info p em {
+  font-style: normal;
+  padding: 5px 10px;
+  position: relative;
+}
+body .ftrWrap footer .info p em:first-child {
+  padding-left: 0;
+}
+body .ftrWrap footer .info p em:after {
+  content: "|";
+  position: absolute;
+  left: 100%;
+}
+body .ftrWrap footer .info p em:last-child:after {
+  display: none;
+}
+body .ftrWrap footer .info p em:nth-of-type(2) a {
+  color: crimson;
+}
+body .ftrWrap footer .info address {
+  font-style: normal;
+  font-size: 12px;
+}
+body .ftrWrap footer .info address ul {
+  overflow: hidden;
+}
+body .ftrWrap footer .info address ul li {
+  float: left;
+  margin-right: 30px;
+}
+body .ftrWrap footer .info .copy {
+  line-height: 25px;
+}
+body .ftrWrap footer .info .snsGroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 25px;
+  align-items: center;
+}
+body .ftrWrap footer .info .snsGroup .sns a {
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  background-color: #999;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  transition: 0.35s;
+}
+body .ftrWrap footer .info .snsGroup .sns a:hover {
+  background-color: #666;
+}
+body .ftrWrap footer .info .snsGroup .sns a i {
+  font-style: normal;
+}
+body .ftrWrap footer .info .snsGroup .family > a {
+  float: left;
+  height: 50px;
+  margin-right: 30px;
+}
+body .ftrWrap footer .info .snsGroup .family > a img {
+  display: block;
+  height: 100%;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite {
+  float: left;
+  position: relative;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul {
+  position: relative;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul li a {
+  display: block;
+  background-color: #4c4c4c;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul li ul {
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  display: none;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul li ul li {
+  background-color: #4c4c4c;
+  padding: 5px;
+  line-height: 25px;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul li ul li a {
+  line-height: 25px;
+  height: auto;
+  height: 25px;
+  background-color: transparent;
+}
+body .ftrWrap footer .info .snsGroup .family .familySite ul li ul li:hover {
+  background-color: #999;
+}
+body .gototop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  background-color: #810000;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+}
+body .gototop a {
+  line-height: 50px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: block;
+  font-size: 30px;
+}
+@keyframes txtAnimation {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+@media (max-width: 1119px) and (min-width: 768px) {
+  body > div > div {
+    max-width: none;
+    padding: 0 20px;
+  }
+  body > header > div {
+    max-width: none;
+  }
+  body > header .lnb {
+    padding: 25px 20px;
+  }
+  body > header .lnb .logo a img {
+    width: 150px;
+  }
+  body .mnWrap {
+    background: linear-gradient(130deg, #fff 15%, #1b1717 15%);
+  }
+  body .mnWrap main {
+    max-width: none;
+    padding: 0;
+    align-items: center;
+    display: block;
+    text-align: center;
+  }
+  body .mnWrap main img {
+    height: 70%;
+  }
+  body .mnWrap main .text {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  body .mnWrap main .text h1:after {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  body .mnWrap main .text a {
+    margin-top: 25px;
+  }
+  body .barstoryWrap div > div {
+    padding: 0 20px;
+  }
+  body .banWrap {
+    padding: 50px 0px;
+    text-align: center;
+  }
+  body .banWrap:before {
+    background-size: auto 100%;
+  }
+  body .banWrap .banner {
+    align-items: center;
+  }
+  body .banWrap .banner .text .aGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body .banWrap .banner .text .aGroup a {
+    text-align: center;
+    margin: 0;
+    line-height: 25px;
+  }
+  body .choiceWrap .choice section .choiceGroup article {
+    width: calc(25% - 200px);
+    padding: 25px;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text {
+    padding: 25px;
+    padding-right: 80px;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text p {
+    margin-top: 25px;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text:before {
+    background-size: 40%;
+  }
+  body div.notiFaq {
+    gap: 0px;
+  }
+  body div.notiFaq .noticeWrap .notice section article h5 {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body .ftrWrap {
+    padding: 50px 20px;
+  }
+  body .ftrWrap footer {
+    max-width: none;
+    width: 100%;
+  }
+  body .ftrWrap footer > img {
+    height: 100px;
+  }
+  body .ftrWrap footer .info p {
+    line-height: 25px;
+  }
+  body .ftrWrap footer .info .snsGroup .family > a img {
+    display: none;
+  }
+}
+@media (max-width: 767px) and (min-width: 601px) {
+  body > div > div {
+    max-width: none;
+    padding: 0 20px;
+  }
+  body > header > div {
+    max-width: none;
+  }
+  body .mnWrap {
+    background: linear-gradient(130deg, #fff 30%, #1b1717 30%);
+  }
+  body .mnWrap main {
+    display: block;
+  }
+  body .mnWrap main img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+  }
+  body .mnWrap main .text {
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+  }
+  body .mnWrap main .text h1:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body .mnWrap main .text a {
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  body .barstoryWrap div {
+    padding: 25px 0;
+  }
+  body .barstoryWrap div > div {
+    padding: 0 20px;
+  }
+  body .pascucciSNSWrap .pascucciSNS section .imgGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  body .pascucciSNSWrap .pascucciSNS section .imgGroup a {
+    width: 80%;
+  }
+  body .banWrap {
+    padding: 50px 0;
+  }
+  body .banWrap .banner {
+    display: block;
+    text-align: center;
+  }
+  body .banWrap .banner .text .aGroup {
+    margin-top: 0;
+  }
+  body .banWrap .banner img {
+    margin-top: 25px;
+  }
+  body .banWrap:before {
+    background-size: auto 100%;
+  }
+  body .choiceWrap .choice section .choiceGroup article {
+    padding: 20px;
+    width: calc(25% - 100px);
+  }
+  body .choiceWrap .choice section .choiceGroup article .text {
+    padding: 25px 15px;
+    padding-right: 80px;
+  }
+  body div.notiFaq {
+    display: block;
+  }
+  body div.notiFaq > div {
+    margin: 0;
+    padding: 0 20px;
+  }
+  body div.notiFaq .noticeWrap {
+    padding-bottom: 100px;
+    width: 100%;
+  }
+  body div.notiFaq .noticeWrap .notice section article h5 {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body div.notiFaq .faqWrap {
+    padding-top: 100px;
+    width: 100%;
+  }
+  body .txtAnimation {
+    height: 100px;
+  }
+  body .txtAnimation .imgGroup .image {
+    animation: txtAnimation 12s infinite linear;
+  }
+  body .txtAnimation .imgGroup .image:nth-child(2) {
+    animation-delay: 6s;
+  }
+  body .ftrWrap footer {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  body .ftrWrap footer > img {
+    height: 100px;
+    margin: 0 auto;
+  }
+  body .ftrWrap footer .info {
+    margin-top: 15px;
+    width: 100%;
+  }
+  body .ftrWrap footer .info p {
+    line-height: 25px;
+  }
+  body .ftrWrap footer .info address {
+    display: none;
+  }
+  body .ftrWrap footer .info .snsGroup .family {
+    justify-content: center;
+  }
+  body .ftrWrap footer .info .snsGroup .family > a {
+    float: none;
+    margin: 0;
+  }
+  body .ftrWrap footer .info .snsGroup .family > a img {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  body > div > div {
+    max-width: none;
+  }
+  body > div > div header h3 {
+    font-size: 2.5em;
+    line-height: 50px;
+  }
+  body > header .lnb .logo a img {
+    width: 100px;
+  }
+  body > header .lnb nav .menubtn span {
+    background-color: #000;
+  }
+  body > header .lnb nav.responsive {
+    height: 60vh;
+    top: -60vh;
+  }
+  body > header .lnb nav.select {
+    top: 0;
+  }
+  body > header.bg000 .lnb nav .menubtn span {
+    background-color: #fff;
+  }
+  body .mnWrap {
+    background: linear-gradient(160deg, #fff 25%, #1b1717 25%);
+    height: auto;
+  }
+  body .mnWrap main {
+    display: block;
+    padding: 0 10px;
+  }
+  body .mnWrap main > img {
+    width: 100%;
+  }
+  body .mnWrap main .text {
+    width: 100%;
+    margin-top: 25px;
+    display: block;
+  }
+  body .mnWrap main .text h1:after {
+    top: calc(100% + 20px);
+  }
+  body .mnWrap main .text h5 {
+    line-height: 25px;
+  }
+  body .mnWrap main .text p {
+    margin-top: 25px;
+  }
+  body .mnWrap main .text a {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    display: inline-block;
+    float: right;
+  }
+  body .barstoryWrap {
+    background: transparent;
+  }
+  body .barstoryWrap div {
+    display: block;
+    padding: 0;
+  }
+  body .barstoryWrap div > div {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  body .barstoryWrap div .centrobar {
+    background-color: #000;
+  }
+  body .barstoryWrap div .bdstory {
+    background-color: #810000;
+  }
+  body .pascucciSNSWrap .pascucciSNS section .imgGroup {
+    display: block;
+  }
+  body .pascucciSNSWrap .pascucciSNS section .imgGroup img {
+    margin-bottom: 10px;
+  }
+  body .pascucciSNSWrap .pascucciSNS section .imgGroup img:nth-of-type(3) {
+    margin: 0;
+  }
+  body .banWrap {
+    padding: 40px 0;
+    text-align: center;
+  }
+  body .banWrap .banner {
+    display: block;
+  }
+  body .banWrap .banner .text {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  body .banWrap .banner .text p {
+    line-height: 25px;
+    margin-top: 15px;
+    letter-spacing: -2px;
+  }
+  body .banWrap .banner .text .aGroup {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body .banWrap .banner .text .aGroup a {
+    margin-right: 0;
+  }
+  body .banWrap .banner img {
+    margin-top: 25px;
+    width: 100%;
+    height: auto;
+  }
+  body .choiceWrap .choice section {
+    margin-top: 25px;
+  }
+  body .choiceWrap .choice section .choiceGroup article {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text {
+    padding: 10px;
+    text-align: left;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text h4 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+  body .choiceWrap .choice section .choiceGroup article .text h6 {
+    display: none;
+    padding-right: 100px;
+  }
+  body .choiceWrap .choice section .choiceGroup article img {
+    position: static;
+  }
+  body .notiFaq {
+    display: block;
+  }
+  body .notiFaq > div {
+    padding: 0;
+    margin: 0;
+  }
+  body .notiFaq .noticeWrap {
+    width: 100%;
+    padding-bottom: 100px;
+  }
+  body .notiFaq .noticeWrap .notice section article h5 {
+    overflow: hidden;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  body .notiFaq .noticeWrap .notice section article time {
+    font-size: 14px;
+  }
+  body .notiFaq .faqWrap {
+    width: 100%;
+    padding-top: 100px;
+  }
+  body .txtAnimation {
+    height: 50px;
+  }
+  body .ftrWrap footer {
+    display: block;
+    text-align: center;
+  }
+  body .ftrWrap footer > img {
+    height: 75px;
+  }
+  body .ftrWrap footer .info p {
+    display: none;
+  }
+  body .ftrWrap footer .info p.copy {
+    display: block;
+    color: #666;
+  }
+  body .ftrWrap footer .info address {
+    display: none;
+  }
+  body .ftrWrap footer .info .snsGroup {
+    display: block;
+  }
+  body .ftrWrap footer .info .snsGroup .family {
+    margin-top: 25px;
+  }
+  body .ftrWrap footer .info .snsGroup .family > a {
+    display: none;
+  }
+  body .ftrWrap footer .info .snsGroup .family .familySite {
+    float: none;
+  }
+}/*# sourceMappingURL=style.css.map */
